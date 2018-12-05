@@ -33,54 +33,6 @@ $(document).ready(function()
    {
       $(this).removeClass('active');
    });
-   $("#Accordion3 .panel-title a").on('mouseover', function()
-   {
-      var $panel = $(this).closest('.panel');
-      if (!$panel.hasClass('active'))
-      {
-         $(this).trigger('click');
-      }
-   });
-   $("#Accordion4 .panel").on('show.bs.collapse', function()
-   {
-      $(this).addClass('active');
-   });
-   $("#Accordion4 .panel").on('hide.bs.collapse', function()
-   {
-      $(this).removeClass('active');
-   });
-   $("#Progressbar1").progressbar(
-   {
-      value: 100,
-      change: function() 
-      {
-         $("#Progressbar1-label").text($(this).progressbar('value') + '%');
-      }
-   });
-   $("#Progressbar2").progressbar(
-   {
-      value: 80,
-      change: function() 
-      {
-         $("#Progressbar2-label").text($(this).progressbar('value') + '%');
-      }
-   });
-   $("#Progressbar3").progressbar(
-   {
-      value: 60,
-      change: function() 
-      {
-         $("#Progressbar3-label").text($(this).progressbar('value') + '%');
-      }
-   });
-   $("#Progressbar4").progressbar(
-   {
-      value: 40,
-      change: function() 
-      {
-         $("#Progressbar4-label").text($(this).progressbar('value') + '%');
-      }
-   });
    $("#ListView1").listview(
    {
       inset: false
@@ -109,10 +61,10 @@ $(document).ready(function()
 <div class="ThemeableMenu1-navbar-collapse collapse">
 <ul class="nav navbar-nav">
 <li class="">
-<a href="">Inicio</a>
+<a href="./index.html">Inicio</a>
 </li>
 <li class="">
-<a href="./página1.html">Organizacion</a>
+<a href="">Organizacion</a>
 </li>
 <li class="">
 <a href="">Contactos</a>
@@ -130,11 +82,11 @@ $(document).ready(function()
 <div class="sidebar1">
 <div id="wb_ListView1">
 <ul id="ListView1">
-<li data-role="list-divider"><img src="images/bars.png" class="ui-li-icon">Menu</li>
-<li>Item 1</li>
-<li>Item 2</li>
-<li>Item 3</li>
-<li>Item 4</li>
+<li data-role="list-divider">Menu</li>
+<li>Actas de Asambrea</li>
+<li>Galerias</li>
+<li>Informaciones</li>
+<li>Noticias</li>
 </ul>
 </div>
 <div id="wb_Accordion3">
@@ -161,9 +113,6 @@ $(document).ready(function()
    </div>
    <div id="Accordion3-collapse2" class="panel-collapse collapse" role="tabpanel">
       <div class="panel-body">
-<div id="wb_Text2">
-<span style="color:#000000;">El presidente de Estados Unidos, Donald Trump, ha amenazado este martes con imponer &quot;importantes aranceles&quot; sobre los productos chinos importados al país norteamericano si su Administración no puede alcanzar un acuerdo comercial efectivo con Pekín.<br><br>&quot;O tenemos un acuerdo real con China o no tenemos ningún acuerdo en absoluto, momento en el que impondremos aranceles importantes a los suministros de productos chinos a Estados Unidos. En última instancia, creo que alcanzaremos un acuerdo: ya sea ahora o en el futuro&quot;, escribió Trump en Twitter</span>
-</div>
       </div>
    </div>
 </div>
@@ -173,42 +122,10 @@ $(document).ready(function()
 </div>
 <div class="main">
 <div id="wb_Heading1">
-<h1 id="Heading1">ASOCIACION DE ELECTRICISTA DE PDTE FRANCO</h1>
+<h1 id="Heading1">ASOCIACION DE ELECTRICISTAS DE PRESIDENTE FRANCO <br>ASEFRAN</h1>
 </div>
 </div>
 <div class="sidebar2">
-<div id="wb_Accordion4">
-<div id="Accordion4" class="panel-group" role="tablist">
-<div class="panel panel-default active">
-   <div class="panel-heading" role="tab">
-      <h4 class="panel-title">
-         <a role="button" data-toggle="collapse" data-parent="#Accordion4" href="#Accordion4-collapse1" aria-controls="Accordion4-collapse1" aria-expanded="true"><span class="panel-icon"></span>Statistics</a>
-      </h4>
-   </div>
-   <div id="Accordion4-collapse1" class="panel-collapse collapsein in" role="tabpanel">
-      <div class="panel-body">
-<label for="" id="Label1">Label 1:</label>
-<div id="Progressbar1" >
-<div id="Progressbar1-label">100%</div>
-</div>
-<label for="" id="Label2">Label 2:</label>
-<div id="Progressbar2" >
-<div id="Progressbar2-label">80%</div>
-</div>
-<label for="" id="Label3">Label 3:</label>
-<div id="Progressbar3" >
-<div id="Progressbar3-label">60%</div>
-</div>
-<label for="" id="Label4">Label 4:</label>
-<div id="Progressbar4" >
-<div id="Progressbar4-label">40%</div>
-</div>
-      </div>
-   </div>
-</div>
-</div>
-
-</div>
 <div id="wb_Carousel1">
 <div id="Carousel1" class="carousel slide">
 <ol class="carousel-indicators">

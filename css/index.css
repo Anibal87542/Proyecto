@@ -825,358 +825,6 @@ body
    -webkit-align-self: auto;
    align-self: auto;
 }
-#Accordion4 *, #Accordion4 *::before, #Accordion4 *::after
-{
-   box-sizing: border-box;
-}
-#Accordion4 .panel
-{
-   background-color: #FFFFFF;
-   background-image: none;
-   border: 1px solid transparent;
-   border-radius: 4px;
-   box-shadow: 0px 1px 1px rgba(0,0,0,0.05);
-   margin-bottom: 1px;
-   overflow: hidden;
-   text-align: left;
-}
-#Accordion4 .panel-default
-{
-   border-color: #C5C5C5;
-}
-#Accordion4 .panel-group .panel
-{
-   margin-bottom: 0px;
-   overflow: hidden;
-   border-radius: 4px;
-}
-#Accordion4 .panel-group .panel + .panel
-{
-   margin-top: 5px;
-}
-#Accordion4 .panel-heading
-{
-   padding: 9px 10px 9px 10px;
-   border-bottom: 1px solid transparent;
-   border-top-right-radius: 4px;
-   border-top-left-radius: 4px;
-}
-#Accordion4 .panel-group .panel-heading
-{
-   border-bottom: 0;
-}
-#Accordion4 .panel-default > .panel-heading
-{
-   background-color: #F6F6F6;
-   background-image: none;
-}
-#Accordion4 .panel-default.active
-{
-   border-color: #DDDDDD;
-}
-#Accordion4 .panel-default.active > .panel-heading
-{
-   background-color: #F5F5F5;
-   background-image: none;
-}
-#Accordion4 .panel-body
-{
-   padding: 4px 4px 4px 4px;
-   position: relative;
-}
-#Accordion4 .panel-body::before, #Accordion4 .panel-body::after
-{
-   display: table;
-   content: " ";
-}
-#Accordion4 .panel-body::after
-{
-   clear: both;
-}
-#Accordion4 .panel-group .panel-heading + .panel-collapse .panel-body
-{
-   border-top: 1px solid #C5C5C5;
-}
-#Accordion4 .panel-default > .panel-heading + .panel-collapse .panel-body
-{
-   border-top-color: #C5C5C5;
-}
-#Accordion4 .panel-title
-{
-   margin-top: 0px;
-   margin-bottom: 0px;
-   color: #454545;
-   font-family: Arial;
-   font-weight: normal;
-   font-size: 13px !important;
-   font-style: normal;
-}
-#Accordion4 .panel-title > a
-{
-   color: inherit;
-   text-decoration: none;
-}
-#Accordion4 .active .panel-title > a
-{
-   color: #000000;
-}
-#Accordion4 .collapse 
-{
-   display: none;
-}
-#Accordion4 .collapse.in
-{
-   display: block;
-}
-#Accordion4 .collapsing
-{
-   position: relative;
-   height: 0;
-   overflow: hidden;
-   -webkit-transition: height 0.35s linear;
-   transition: height 0.35s linear;
-}
-#Accordion4 .panel-default .panel-heading .panel-icon
-{
-   width: 16px;
-   height: 16px;
-   box-sizing: content-box;
-   padding-right: 4px;
-   display: inline-block;
-   vertical-align: middle;
-   margin-top: -0.25em;
-   position: relative;
-   text-indent: -99999px;
-   overflow: hidden;
-   background-image: url(../images/index-Accordion4-default.png);
-   background-repeat: no-repeat;
-}
-#Accordion4 .panel-default.active .panel-heading .panel-icon
-{
-   background-image: url(../images/index-Accordion4-active.png);
-}
-#wb_Accordion4
-{
-   margin: 20px 20px 0px 20px;
-   -webkit-flex-grow: 0;
-   flex-grow: 0;
-   -webkit-flex-shrink: 0;
-   flex-shrink: 0;
-   -webkit-align-self: auto;
-   align-self: auto;
-}
-#Label1
-{
-   border: 0px solid #CCCCCC;
-   border-radius: 4px;
-   background-color: transparent;
-   background-image: none;
-   color :#000000;
-   font-family: Arial;
-   font-weight: normal;
-   font-size: 13px;
-   box-sizing: border-box;
-   padding: 4px 4px 4px 4px;
-   margin: 0;
-   text-align: left;
-   vertical-align: top;
-}
-#Progressbar1, #Progressbar1 .ui-corner-right
-{
-   border-bottom-right-radius: 6px;
-   border-top-right-radius: 6px;
-}
-#Progressbar1, #Progressbar1 .ui-corner-left
-{
-   border-bottom-left-radius: 6px;
-   border-top-left-radius: 6px;
-}
-#Progressbar1,ui-widget-content
-{
-   border-color: #EEEEEE;
-   background-color: #EEEEEE;
-   background-image: none;
-}
-#Progressbar1 .ui-widget-header
-{
-   border-color: #5CB85C;
-   background-color: #5CB85C;
-   background-image: none;
-}
-#Progressbar1-label
-{
-   position: absolute;
-   left: 0;
-   top: 0;
-   width: 100%;
-   text-align: center;
-   line-height: 20px;
-   vertical-align: middle;
-   color: #FFFFFF;
-   font-family: Arial;
-   font-weight: normal;
-   font-size: 13px;
-   font-style: normal;
-}
-#Label2
-{
-   border: 0px solid #CCCCCC;
-   border-radius: 4px;
-   background-color: transparent;
-   background-image: none;
-   color :#000000;
-   font-family: Arial;
-   font-weight: normal;
-   font-size: 13px;
-   box-sizing: border-box;
-   padding: 4px 4px 4px 4px;
-   margin: 0;
-   text-align: left;
-   vertical-align: top;
-}
-#Progressbar2, #Progressbar2 .ui-corner-right
-{
-   border-bottom-right-radius: 6px;
-   border-top-right-radius: 6px;
-}
-#Progressbar2, #Progressbar2 .ui-corner-left
-{
-   border-bottom-left-radius: 6px;
-   border-top-left-radius: 6px;
-}
-#Progressbar2,ui-widget-content
-{
-   border-color: #EEEEEE;
-   background-color: #EEEEEE;
-   background-image: none;
-}
-#Progressbar2 .ui-widget-header
-{
-   border-color: #5BC0DE;
-   background-color: #5BC0DE;
-   background-image: none;
-}
-#Progressbar2-label
-{
-   position: absolute;
-   left: 0;
-   top: 0;
-   width: 100%;
-   text-align: center;
-   line-height: 20px;
-   vertical-align: middle;
-   color: #FFFFFF;
-   font-family: Arial;
-   font-weight: normal;
-   font-size: 13px;
-   font-style: normal;
-}
-#Label3
-{
-   border: 0px solid #CCCCCC;
-   border-radius: 4px;
-   background-color: transparent;
-   background-image: none;
-   color :#000000;
-   font-family: Arial;
-   font-weight: normal;
-   font-size: 13px;
-   box-sizing: border-box;
-   padding: 4px 4px 4px 4px;
-   margin: 0;
-   text-align: left;
-   vertical-align: top;
-}
-#Progressbar3, #Progressbar3 .ui-corner-right
-{
-   border-bottom-right-radius: 6px;
-   border-top-right-radius: 6px;
-}
-#Progressbar3, #Progressbar3 .ui-corner-left
-{
-   border-bottom-left-radius: 6px;
-   border-top-left-radius: 6px;
-}
-#Progressbar3,ui-widget-content
-{
-   border-color: #EEEEEE;
-   background-color: #EEEEEE;
-   background-image: none;
-}
-#Progressbar3 .ui-widget-header
-{
-   border-color: #F0AD4E;
-   background-color: #F0AD4E;
-   background-image: none;
-}
-#Progressbar3-label
-{
-   position: absolute;
-   left: 0;
-   top: 0;
-   width: 100%;
-   text-align: center;
-   line-height: 20px;
-   vertical-align: middle;
-   color: #FFFFFF;
-   font-family: Arial;
-   font-weight: normal;
-   font-size: 13px;
-   font-style: normal;
-}
-#Label4
-{
-   border: 0px solid #CCCCCC;
-   border-radius: 4px;
-   background-color: transparent;
-   background-image: none;
-   color :#000000;
-   font-family: Arial;
-   font-weight: normal;
-   font-size: 13px;
-   box-sizing: border-box;
-   padding: 4px 4px 4px 4px;
-   margin: 0;
-   text-align: left;
-   vertical-align: top;
-}
-#Progressbar4, #Progressbar4 .ui-corner-right
-{
-   border-bottom-right-radius: 6px;
-   border-top-right-radius: 6px;
-}
-#Progressbar4, #Progressbar4 .ui-corner-left
-{
-   border-bottom-left-radius: 6px;
-   border-top-left-radius: 6px;
-}
-#Progressbar4,ui-widget-content
-{
-   border-color: #EEEEEE;
-   background-color: #EEEEEE;
-   background-image: none;
-}
-#Progressbar4 .ui-widget-header
-{
-   border-color: #D9534F;
-   background-color: #D9534F;
-   background-image: none;
-}
-#Progressbar4-label
-{
-   position: absolute;
-   left: 0;
-   top: 0;
-   width: 100%;
-   text-align: center;
-   line-height: 20px;
-   vertical-align: middle;
-   color: #4F4F4F;
-   font-family: Arial;
-   font-weight: normal;
-   font-size: 13px;
-   font-style: normal;
-}
 #wb_Text1 
 {
    background-color: transparent;
@@ -1940,7 +1588,7 @@ body
    color: #4F4F4F;
    background-color: transparent;
    background-image: none;
-   border: 0px #2E6DA4 #5F531C812B0887762D3B7;
+   border: 0px #2E6DA4 #3EA01E012B0887762D3B7;
 }
 #wb_CssMenu3 .firstmain a
 {
@@ -2035,7 +1683,7 @@ body
    color: #4F4F4F;
    background-color: transparent;
    background-image: none;
-   border: 0px #2E6DA4 #5F5433812B0887762D3B7;
+   border: 0px #2E6DA4 #3E99E3012B0887762D3B7;
 }
 #wb_CssMenu4 .firstmain a
 {
@@ -2152,33 +1800,6 @@ body
    align-self: flex-start;
    margin: 10px 0px 10px 0px;
 }
-#wb_Text2 
-{
-   background-color: transparent;
-   background-image: none;
-   border: 0px solid #000000;
-   padding: 0;
-   margin: 0;
-   text-align: left;
-}
-#wb_Text2
-{
-   font-family: Arial;
-   font-weight: normal;
-   font-size: 13px;
-   line-height: 16px;
-}
-#wb_Text2 div
-{
-   text-align: left;
-   white-space: nowrap;
-}
-#Label2
-{
-   display: block;
-   width: 100%;
-   z-index: 8;
-}
 #Editbox2
 {
    display: block;
@@ -2187,70 +1808,30 @@ body
 {
    display: inline-block;
    width: 100%;
-   z-index: 17;
-}
-#Label3
-{
-   display: block;
-   width: 100%;
-   z-index: 10;
+   z-index: 8;
 }
 #wb_Heading4
 {
    display: inline-block;
    width: 100%;
-   z-index: 16;
-}
-#Label4
-{
-   display: block;
-   width: 100%;
-   z-index: 12;
+   z-index: 7;
 }
 #wb_Heading5
 {
    display: inline-block;
    width: 100%;
-   z-index: 15;
+   z-index: 6;
 }
 #wb_Heading6
 {
    display: inline-block;
    width: 100%;
-   z-index: 14;
-}
-#Progressbar1
-{
-   display: block;
-   width: 100%;
-   height: 20px;
-   z-index: 7;
-}
-#Progressbar2
-{
-   display: block;
-   width: 100%;
-   height: 20px;
-   z-index: 9;
-}
-#Progressbar3
-{
-   display: block;
-   width: 100%;
-   height: 20px;
-   z-index: 11;
+   z-index: 5;
 }
 #wb_ListView1
 {
    display: inline-block;
-   z-index: 3;
-}
-#Progressbar4
-{
-   display: block;
-   width: 100%;
-   height: 20px;
-   z-index: 13;
+   z-index: 2;
 }
 #wb_Carousel1
 {
@@ -2258,12 +1839,7 @@ body
 #wb_Accordion3
 {
    display: inline-block;
-   z-index: 4;
-}
-#wb_Accordion4
-{
-   display: inline-block;
-   z-index: 18;
+   z-index: 3;
 }
 #ListView1
 {
@@ -2281,36 +1857,30 @@ body
    display: block;
    width: 88px;
    height: 25px;
-   z-index: 41;
+   z-index: 22;
 }
 #wb_CssMenu3
 {
    display: inline-block;
-   z-index: 35;
+   z-index: 16;
 }
 #wb_Breadcrumb2
 {
    display: inline-block;
    width: 415px;
    height: 32px;
-   z-index: 42;
+   z-index: 23;
    vertical-align: top;
 }
 #wb_CssMenu4
 {
    display: inline-block;
-   z-index: 37;
-}
-#Label1
-{
-   display: block;
-   width: 100%;
-   z-index: 6;
+   z-index: 18;
 }
 #wb_Heading1
 {
    display: inline-block;
-   z-index: 5;
+   z-index: 4;
 }
 @media only screen and (max-width: 1065px)
 {
@@ -2460,124 +2030,6 @@ body
    flex-shrink: 0;
    -webkit-align-self: auto;
    align-self: auto;
-}
-#wb_Accordion4
-{
-   width: auto;
-   height: auto;
-   visibility: visible;
-   display: inline;
-   margin: 20px 20px 0px 20px;
-   -webkit-flex-grow: 0;
-   flex-grow: 0;
-   -webkit-flex-shrink: 0;
-   flex-shrink: 0;
-   -webkit-align-self: auto;
-   align-self: auto;
-}
-#Label1
-{
-   width: calc(100% - 0px);
-   height: 24px;
-   visibility: visible;
-   display: block;
-   color: #000000;
-   font-size: 13px;
-   font-family: Arial;
-   font-weight: normal;
-   font-style: normal;
-   text-decoration: none;
-   background-color: transparent;
-   background-image: none;
-   border-radius: 4px;
-   margin: 0;
-   padding: 4px 4px 4px 4px;
-   text-align: left;
-}
-#Progressbar1
-{
-   width: calc(100% - 0px);
-   visibility: visible;
-   display: block;
-   margin: 0;
-}
-#Label2
-{
-   width: calc(100% - 0px);
-   height: 24px;
-   visibility: visible;
-   display: block;
-   color: #000000;
-   font-size: 13px;
-   font-family: Arial;
-   font-weight: normal;
-   font-style: normal;
-   text-decoration: none;
-   background-color: transparent;
-   background-image: none;
-   border-radius: 4px;
-   margin: 0;
-   padding: 4px 4px 4px 4px;
-   text-align: left;
-}
-#Progressbar2
-{
-   width: calc(100% - 0px);
-   visibility: visible;
-   display: block;
-   margin: 0;
-}
-#Label3
-{
-   width: calc(100% - 0px);
-   height: 24px;
-   visibility: visible;
-   display: block;
-   color: #000000;
-   font-size: 13px;
-   font-family: Arial;
-   font-weight: normal;
-   font-style: normal;
-   text-decoration: none;
-   background-color: transparent;
-   background-image: none;
-   border-radius: 4px;
-   margin: 0;
-   padding: 4px 4px 4px 4px;
-   text-align: left;
-}
-#Progressbar3
-{
-   width: calc(100% - 0px);
-   visibility: visible;
-   display: block;
-   margin: 0;
-}
-#Label4
-{
-   width: calc(100% - 0px);
-   height: 24px;
-   visibility: visible;
-   display: block;
-   color: #000000;
-   font-size: 13px;
-   font-family: Arial;
-   font-weight: normal;
-   font-style: normal;
-   text-decoration: none;
-   background-color: transparent;
-   background-image: none;
-   border-radius: 4px;
-   margin: 0;
-   padding: 4px 4px 4px 4px;
-   text-align: left;
-}
-#Progressbar4
-{
-   width: calc(100% - 0px);
-   visibility: visible;
-   display: block;
-   margin: 0;
 }
 #wb_Text1
 {
@@ -3039,7 +2491,7 @@ body
    color: #4F4F4F;
    background-color: transparent;
    background-image: none;
-   border: 0px #2E6DA4 #5F53FD85D363F85D36368;
+   border: 0px #2E6DA4 #3E9FBB05DD08605DD07D0;
 }
 #wb_Text8
 {
@@ -3112,7 +2564,7 @@ body
    color: #4F4F4F;
    background-color: transparent;
    background-image: none;
-   border: 0px #2E6DA4 #5F53FD85D36C805D36BF0;
+   border: 0px #2E6DA4 #3E9FBB05DD16505DD15C0;
 }
 #wb_Text9
 {
