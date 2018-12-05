@@ -832,7 +832,7 @@ body
    border: 0px solid #000000;
    padding: 10px 10px 10px 10px;
    margin: 0;
-   text-align: left;
+   text-align: justify;
 }
 #wb_Text1
 {
@@ -843,8 +843,8 @@ body
 }
 #wb_Text1 div
 {
-   text-align: left;
-   white-space: nowrap;
+   text-align: justify;
+   white-space: normal;
 }
 #ListView1{
    font-family: Arial;
@@ -1588,7 +1588,7 @@ body
    color: #4F4F4F;
    background-color: transparent;
    background-image: none;
-   border: 0px #2E6DA4 #3EA0BC812B0887762D3B7;
+   border: 0px #2E6DA4 #5AC594812B0887762D3B7;
 }
 #wb_CssMenu3 .firstmain a
 {
@@ -1683,7 +1683,7 @@ body
    color: #4F4F4F;
    background-color: transparent;
    background-image: none;
-   border: 0px #2E6DA4 #3EA515012B0887762D3B7;
+   border: 0px #2E6DA4 #3EE9A0012B0887762D3B7;
 }
 #wb_CssMenu4 .firstmain a
 {
@@ -1699,110 +1699,6 @@ body
    font-size: 1px;
    height: 0;
    line-height: 0;
-}
-#wb_Text9 
-{
-   background-color: transparent;
-   background-image: none;
-   border: 0px solid #000000;
-   -webkit-flex-grow: 1;
-   flex-grow: 1;
-   -webkit-flex-shrink: 1;
-   flex-shrink: 1;
-   -webkit-align-self: auto;
-   align-self: auto;
-   padding: 0px 0px 8px 0px;
-   margin: 0;
-   text-align: left;
-}
-#wb_Text9
-{
-   font-family: Arial;
-   font-weight: normal;
-   font-size: 15px;
-   line-height: 16px;
-}
-#wb_Text9 div
-{
-   text-align: left;
-   white-space: nowrap;
-}
-#wb_Text10 
-{
-   background-color: transparent;
-   background-image: none;
-   border: 0px solid #000000;
-   -webkit-flex-grow: 1;
-   flex-grow: 1;
-   -webkit-flex-shrink: 1;
-   flex-shrink: 1;
-   -webkit-align-self: auto;
-   align-self: auto;
-   padding: 4px 0px 8px 0px;
-   margin: 0;
-   text-align: left;
-}
-#wb_Text10
-{
-   font-family: Arial;
-   font-weight: normal;
-   font-size: 13px;
-   line-height: 16px;
-}
-#wb_Text10 div
-{
-   text-align: left;
-   white-space: nowrap;
-}
-#Editbox2
-{
-   border: 1px solid #CCCCCC;
-   border-radius: 4px;
-   background-color: #FFFFFF;
-   background-image: none;
-   color :#000000;
-   font-family: Arial;
-   font-weight: normal;
-   font-size: 13px;
-   box-sizing: border-box;
-   line-height: 16px;
-   padding: 4px 4px 4px 4px;
-   margin: 0;
-   -webkit-flex-grow: 1;
-   flex-grow: 1;
-   -webkit-flex-shrink: 1;
-   flex-shrink: 1;
-   -webkit-align-self: auto;
-   align-self: auto;
-   text-align: left;
-}
-#Editbox2:focus
-{
-   border-color: #66AFE9;
-   box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075), 0px 0px 8px rgba(102,175,233,0.60);
-   outline: 0;
-}
-#Button2
-{
-   border: 1px solid #2E6DA4;
-   border-radius: 4px;
-   background-color: #3370B7;
-   background-image: none;
-   color: #FFFFFF;
-   font-family: Arial;
-   font-weight: normal;
-   font-size: 13px;
-   -webkit-flex-grow: 0;
-   flex-grow: 0;
-   -webkit-flex-shrink: 0;
-   flex-shrink: 0;
-   -webkit-align-self: flex-start;
-   align-self: flex-start;
-   margin: 10px 0px 10px 0px;
-}
-#Editbox2
-{
-   display: block;
 }
 #wb_Heading3
 {
@@ -1852,13 +1748,6 @@ body
    width: 100%;
    z-index: 1000;
 }
-#Button2
-{
-   display: block;
-   width: 88px;
-   height: 25px;
-   z-index: 22;
-}
 #wb_CssMenu3
 {
    display: inline-block;
@@ -1869,7 +1758,7 @@ body
    display: inline-block;
    width: 415px;
    height: 32px;
-   z-index: 23;
+   z-index: 19;
    vertical-align: top;
 }
 #wb_CssMenu4
@@ -2050,7 +1939,7 @@ body
    font-size: 13px;
    margin: 0;
    padding: 10px 10px 10px 10px;
-   text-align: left;
+   text-align: justify;
    line-height: 16px;
 }
 #wb_ListView1
@@ -2491,7 +2380,7 @@ body
    color: #4F4F4F;
    background-color: transparent;
    background-image: none;
-   border: 0px #2E6DA4 #3EA4D605DD08605DD07D0;
+   border: 0px #2E6DA4 #5AC59485DD08605DD07D0;
 }
 #wb_Text8
 {
@@ -2564,118 +2453,6 @@ body
    color: #4F4F4F;
    background-color: transparent;
    background-image: none;
-   border: 0px #2E6DA4 #3EA4D605DD16505DD15C0;
-}
-#wb_Text9
-{
-   width: auto;
-   height: auto;
-   visibility: visible;
-   display: inline;
-   font-size: 8px;
-   font-family: Arial;
-   font-weight: normal;
-   font-style: normal;
-   text-decoration: none;
-   background-color: transparent;
-   background-image: none;
-   -webkit-flex-grow: 1;
-   flex-grow: 1;
-   -webkit-flex-shrink: 1;
-   flex-shrink: 1;
-   -webkit-align-self: auto;
-   align-self: auto;
-}
-#wb_Text9
-{
-   font-family: Arial;
-   font-weight: normal;
-   font-size: 15px;
-   margin: 0;
-   padding: 0px 0px 8px 0px;
-   text-align: left;
-   line-height: 16px;
-}
-#wb_Text10
-{
-   width: auto;
-   height: auto;
-   visibility: visible;
-   display: inline;
-   font-size: 8px;
-   font-family: Arial;
-   font-weight: normal;
-   font-style: normal;
-   text-decoration: none;
-   background-color: transparent;
-   background-image: none;
-   -webkit-flex-grow: 1;
-   flex-grow: 1;
-   -webkit-flex-shrink: 1;
-   flex-shrink: 1;
-   -webkit-align-self: auto;
-   align-self: auto;
-}
-#wb_Text10
-{
-   font-family: Arial;
-   font-weight: normal;
-   font-size: 13px;
-   margin: 0;
-   padding: 4px 0px 8px 0px;
-   text-align: left;
-   line-height: 16px;
-}
-#Editbox2
-{
-   width: auto;
-   height: auto;
-   visibility: visible;
-   display: inline;
-   color: #000000;
-   font-size: 13px;
-   font-family: Arial;
-   font-weight: normal;
-   font-style: normal;
-   text-decoration: none;
-   background-color: #FFFFFF;
-   background-image: none;
-   border-radius: 4px;
-   margin: 0;
-   padding: 4px 4px 4px 4px;
-   text-align: left;
-   -webkit-flex-grow: 1;
-   flex-grow: 1;
-   -webkit-flex-shrink: 1;
-   flex-shrink: 1;
-   -webkit-align-self: auto;
-   align-self: auto;
-}
-#Editbox2
-{
-   line-height: 16px;
-}
-#Button2
-{
-   width: 88px;
-   height: 25px;
-   visibility: visible;
-   display: inline;
-   color: #FFFFFF;
-   font-size: 13px;
-   font-family: Arial;
-   font-weight: normal;
-   font-style: normal;
-   text-decoration: none;
-   background-color: #3370B7;
-   background-image: none;
-   border-radius: 4px;
-   margin: 10px 0px 10px 0px;
-   -webkit-flex-grow: 0;
-   flex-grow: 0;
-   -webkit-flex-shrink: 0;
-   flex-shrink: 0;
-   -webkit-align-self: flex-start;
-   align-self: flex-start;
+   border: 0px #2E6DA4 #5AC59485DD16505DD15C0;
 }
 }
