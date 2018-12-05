@@ -1,48 +1,477 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<?php
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['form_name']) && $_POST['form_name'] == 'loginform')
+{
+   $success_page = '';
+   $error_page = basename(__FILE__);
+   $database = './usersdb.php';
+   $crypt_pass = md5($_POST['password']);
+   $found = false;
+   $fullname = '';
+   $session_timeout = 600;
+   if(filesize($database) > 0)
+   {
+      $items = file($database, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+      foreach($items as $line)
+      {
+         list($username, $password, $email, $name, $active) = explode('|', trim($line));
+         if ($username == $_POST['username'] && $active != "0" && $password == $crypt_pass)
+         {
+            $found = true;
+            $fullname = $name;
+         }
+      }
+   }
+   if($found == false)
+   {
+      header('Location: '.$error_page);
+      exit;
+   }
+   else
+   {
+      if (session_id() == "")
+      {
+         session_start();
+      }
+      $_SESSION['username'] = $_POST['username'];
+      $_SESSION['fullname'] = $fullname;
+      $_SESSION['expires_by'] = time() + $session_timeout;
+      $_SESSION['expires_timeout'] = $session_timeout;
+      header('Location: '.$success_page);
+      exit;
+   }
+}
+$username = isset($_COOKIE['username']) ? $_COOKIE['username'] : '';
+$password = isset($_COOKIE['password']) ? $_COOKIE['password'] : '';
+?>
+<!doctype html>
 <html>
 <head>
-<title>News Letter</title>
-<meta name="description" content="This page is create with WYSIWYG Web Builder from http://www.pablosoftwaresolutions.com">
-<meta name="keywords" content="News Letter">
-<meta name="author" content="Pablo">
+<meta charset="utf-8">
+<title>Portal</title>
 <meta name="generator" content="WYSIWYG Web Builder 14 - http://www.wysiwygwebbuilder.com">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="css/Asefran.css" rel="stylesheet" type="text/css">
-<link href="css/index.css" rel="stylesheet" type="text/css">
+<link href="css/base/jquery-ui.min.css" rel="stylesheet">
+<link href="css/Asefran.css" rel="stylesheet">
+<link href="css/index.css" rel="stylesheet">
+<script src="java scrit/jquery-1.12.4.min.js"></script>
+<script src="java scrit/transition.min.js"></script>
+<script src="java scrit/collapse.min.js"></script>
+<script src="java scrit/dropdown.min.js"></script>
+<script src="java scrit/jquery-ui.min.js"></script>
+<script src="java scrit/listview.min.js"></script>
+<script src="java scrit/carousel.min.js"></script>
+<script>
+$(document).ready(function()
+{
+   $(document).on('click','.ThemeableMenu1-navbar-collapse.in',function(e)
+   {
+      if ($(e.target).is('a') && ($(e.target).attr('class') != 'dropdown-toggle')) 
+      {
+         $(this).collapse('hide');
+      }
+   });
+   $("#Accordion2 .panel").on('show.bs.collapse', function()
+   {
+      $(this).addClass('active');
+   });
+   $("#Accordion2 .panel").on('hide.bs.collapse', function()
+   {
+      $(this).removeClass('active');
+   });
+   $("#Accordion3 .panel").on('show.bs.collapse', function()
+   {
+      $(this).addClass('active');
+   });
+   $("#Accordion3 .panel").on('hide.bs.collapse', function()
+   {
+      $(this).removeClass('active');
+   });
+   $("#Accordion4 .panel").on('show.bs.collapse', function()
+   {
+      $(this).addClass('active');
+   });
+   $("#Accordion4 .panel").on('hide.bs.collapse', function()
+   {
+      $(this).removeClass('active');
+   });
+   $("#Progressbar1").progressbar(
+   {
+      value: 100,
+      change: function() 
+      {
+         $("#Progressbar1-label").text($(this).progressbar('value') + '%');
+      }
+   });
+   $("#Progressbar2").progressbar(
+   {
+      value: 80,
+      change: function() 
+      {
+         $("#Progressbar2-label").text($(this).progressbar('value') + '%');
+      }
+   });
+   $("#Progressbar3").progressbar(
+   {
+      value: 60,
+      change: function() 
+      {
+         $("#Progressbar3-label").text($(this).progressbar('value') + '%');
+      }
+   });
+   $("#Progressbar4").progressbar(
+   {
+      value: 40,
+      change: function() 
+      {
+         $("#Progressbar4-label").text($(this).progressbar('value') + '%');
+      }
+   });
+   $("#ListView1").listview(
+   {
+      inset: false
+   });
+   $.fn.bootstrapcarousel.Constructor.TRANSITION_DURATION = 500;
+   $("#Carousel1").bootstrapcarousel({interval:3000});
+});
+</script>
 </head>
 <body>
-<div id="container">
-<img src="images/img0001.jpg" id="Banner1" alt="ASEFRAN">
-<div id="wb_Shape1">
-<div id="Shape1"></div></div>
+<div id="wb_header">
+<div id="header">
+<div class="row">
+<div class="col-1">
+<div id="wb_ThemeableMenu1">
+<div id="ThemeableMenu1" class="ThemeableMenu1" style="width:100%;height:auto !important;">
+<div class="container">
+<a id="ThemeableMenu1-logo" href="#"><img alt="" title="" src="images/logo32.jpg"></a>
+<div class="navbar-header">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".ThemeableMenu1-navbar-collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+</div>
+<div class="ThemeableMenu1-navbar-collapse collapse">
+<ul class="nav navbar-nav">
+<li class="">
+<a href="">Inicio</a>
+</li>
+<li class="">
+<a href="">Organizacion</a>
+</li>
+<li class="">
+<a href="">Contact</a>
+</li>
+<li class="">
+<a href="">Products</a>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">Contactos<b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li><a href="">Item 1</a></li>
+<li><a href="">Item 2</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="FlexGrid1">
+<div class="sidebar1">
+<div id="wb_ListView1">
+<ul id="ListView1">
+<li data-role="list-divider"><img src="images/bars.png" class="ui-li-icon">Menu</li>
+<li>Item 1</li>
+<li>Item 2</li>
+<li>Item 3</li>
+<li>Item 4</li>
+</ul>
+</div>
+<div id="wb_Accordion3">
+<div id="Accordion3" class="panel-group" role="tablist">
+<div class="panel panel-default active">
+   <div class="panel-heading" role="tab">
+      <h4 class="panel-title">
+         <a role="button" data-toggle="collapse" data-parent="#Accordion3" href="#Accordion3-collapse1" aria-controls="Accordion3-collapse1" aria-expanded="true"><span class="panel-icon"></span>The Latest News</a>
+      </h4>
+   </div>
+   <div id="Accordion3-collapse1" class="panel-collapse collapsein in" role="tabpanel">
+      <div class="panel-body">
 <div id="wb_Text1">
-<span style="color:#000000;font-family:Arial;font-size:11px;">INSERT YOUR TAGLINE OR SLOGAN HERE</span></div>
-<div id="wb_Text2">
-<span style="color:#000000;font-family:Arial;font-size:11px;">Last updated on 10/10/2014 </span></div>
-<div id="Banner2"><span>INSERT YOUR HEADLINE TEXT HERE</span></div>
-<div id="Banner3"><span>&#169; Copyright 2014 Your Company </span></div>
-<div id="wb_Text3">
-<span style="color:#000000;font-family:Arial;font-size:13px;">The Latin style text you see used within this layout is a commonly used proofing text that is used for design proofing.&nbsp; Additional information can be found at <a href="http://www.lipsum.com" target="_blank">http://www.lipsum.com<strong><br></a></strong><br><strong>Lorem ipsum</strong> dolor sit amet, consetetur sadipscing elitr, sed diam eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</span></div>
-<div id="wb_Image1">
-<img src="images/wwb_grandcentralstation.jpg" id="Image1" alt=""></div>
-<div id="wb_Text4">
-<span style="color:#000000;font-family:Arial;font-size:13px;">Incidunt metus sed turpis. Nunc Pablo iaculis neque vel odio. Quisque ut eros semper sapien commodo semper. Pellentesque habitant morbi tristique senectus et netus et malesuada&nbsp; fames ac turpis egestas. Vivamus pharetra adipiscing pede. Sed a nunc ac velit vestibulum auctor. Sed feugiat, augue at cursus suscipit, pede mauris consequat dolor, eget suscipit ipsum sapien eget felis. Aliquam scelerisque&nbsp; tincidunt felis. </span></div>
-<div id="wb_Image2">
-<img src="images/wwb_nyts.jpg" id="Image2" alt=""></div>
-<div id="wb_Text6">
-<span style="color:#000000;font-family:Arial;font-size:13px;"><strong>Lorem ipsum</strong> dolor sit amet, et ea rebum consetetur sadipscing elitr, se diam eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed voluptua. At vero eos et accusam et justo duo dolores etewe ea rebum.<br>Incidunt metus sed turpis. Nunc Pablo iaculis neque vel odio. </span></div>
+<span style="color:#696969;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero.</span>
+</div>
+      </div>
+   </div>
+</div>
+</div>
+
+</div>
+</div>
+<div class="main">
+<div id="wb_Heading1">
+<h1 id="Heading1">ASEFRAN</h1>
+</div>
+<div id="Blog2">
+<div class="blogitem">
+   <div class="bloginfo">
+   <span class="blogsubject">Article 1</span>
+   <p><span style="color:#212529;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero.</span></p>
+   <div class="blogdate">Posted on Wednesday, March 28, 2018</div>
+   <hr>
+   </div>
+</div>
+<div class="clearfix visible-col1"></div>
+<div class="blogitem">
+   <div class="bloginfo">
+   <span class="blogsubject">Article 2</span>
+   <p><span style="color:#000000;">Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</span></p>
+   <div class="blogdate">Posted on Sunday, February 25, 2018</div>
+   <hr>
+   </div>
+</div>
+<div class="clearfix visible-col1"></div>
+<div class="blogitem">
+   <div class="bloginfo">
+   <span class="blogsubject">Article 3</span>
+   <p><span style="color:#000000;">Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</span></p>
+   <div class="blogdate">Posted on Sunday, April 01, 2018</div>
+   <hr>
+   </div>
+</div>
+<div class="clearfix visible-col1"></div>
+</div>
+<div id="wb_Heading2">
+<h1 id="Heading2">Testimonials</h1>
+</div>
+<div id="Blog4">
+<div class="blogitem">
+<div class="blogquote">
+   <div class="bloguser">
+    
+      <div class="blogthumb"><a href="images/user-circle-o.png"><img alt="Tim" src="images/user-circle-o.png"></a></div>
+      <div class="blogsubject">Tim</div>
+  
+   </div>
+  
+   <div class="bloginfo">
+    
+      <div class="blogcontent"><span style="color:#000000;">&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero.&quot;</span>
+</div>
+    
+      <div class="blogdate">Wednesday, March 28, 2018</div>
+  
+   </div>
+
+</div>
+</div>
+
+<div class="clearfix visible-col1"></div>
+<div class="blogitem">
+<div class="blogquote">
+   <div class="bloguser">
+    
+      <div class="blogthumb"><a href="images/user-circle-o.png"><img alt="Jonathan" src="images/user-circle-o.png"></a></div>
+      <div class="blogsubject">Jonathan</div>
+  
+   </div>
+  
+   <div class="bloginfo">
+    
+      <div class="blogcontent"><span style="color:#000000;">&quot;Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor.&quot;</span>
+</div>
+    
+      <div class="blogdate">Sunday, February 25, 2018</div>
+  
+   </div>
+
+</div>
+</div>
+
+<div class="clearfix visible-col1"></div>
+</div>
+</div>
+<div class="sidebar2">
+<div id="wb_Accordion2">
+<div id="Accordion2" class="panel-group" role="tablist">
+<div class="panel panel-default active">
+   <div class="panel-heading" role="tab">
+      <h4 class="panel-title">
+         <a role="button" data-toggle="collapse" data-parent="#Accordion2" href="#Accordion2-collapse1" aria-controls="Accordion2-collapse1" aria-expanded="true"><span class="panel-icon"></span>Log In</a>
+      </h4>
+   </div>
+   <div id="Accordion2-collapse1" class="panel-collapse collapsein in" role="tabpanel">
+      <div class="panel-body">
+<div id="wb_Login1">
+<form name="loginform" method="post" accept-charset="UTF-8" action="<?php echo basename(__FILE__); ?>" id="loginform">
+<input type="hidden" name="form_name" value="loginform">
+<table id="Login1">
+<tr>
+   <td class="row"><input class="input" name="username" type="text" id="username" value="<?php echo $username; ?>" placeholder="User Name"></td>
+</tr>
+<tr>
+   <td class="row"><input class="input" name="password" type="password" id="password" value="<?php echo $password; ?>" placeholder="Password"></td>
+</tr>
+<tr>
+   <td style="text-align:left;vertical-align:bottom"><input class="button" type="submit" name="login" value="Log In" id="login"></td>
+</tr>
+</table>
+</form>
+
+</div>
+      </div>
+   </div>
+</div>
+</div>
+
+</div>
+<div id="wb_Accordion4">
+<div id="Accordion4" class="panel-group" role="tablist">
+<div class="panel panel-default active">
+   <div class="panel-heading" role="tab">
+      <h4 class="panel-title">
+         <a role="button" data-toggle="collapse" data-parent="#Accordion4" href="#Accordion4-collapse1" aria-controls="Accordion4-collapse1" aria-expanded="true"><span class="panel-icon"></span>Statistics</a>
+      </h4>
+   </div>
+   <div id="Accordion4-collapse1" class="panel-collapse collapsein in" role="tabpanel">
+      <div class="panel-body">
+<label for="" id="Label1">Label 1:</label>
+<div id="Progressbar1" >
+<div id="Progressbar1-label">100%</div>
+</div>
+<label for="" id="Label2">Label 2:</label>
+<div id="Progressbar2" >
+<div id="Progressbar2-label">80%</div>
+</div>
+<label for="" id="Label3">Label 3:</label>
+<div id="Progressbar3" >
+<div id="Progressbar3-label">60%</div>
+</div>
+<label for="" id="Label4">Label 4:</label>
+<div id="Progressbar4" >
+<div id="Progressbar4-label">40%</div>
+</div>
+      </div>
+   </div>
+</div>
+</div>
+
+</div>
+<div id="wb_Carousel1">
+<div id="Carousel1" class="carousel slide">
+<ol class="carousel-indicators">
+<li data-target="#Carousel1" data-slide-to="0" class="active"></li>
+<li data-target="#Carousel1" data-slide-to="1"></li>
+<li data-target="#Carousel1" data-slide-to="2"></li>
+<li data-target="#Carousel1" data-slide-to="3"></li>
+</ol>
+<div class="carousel-inner">
+<div class="item frame-1 active">
+<div class="innerframe">
+<div id="wb_Heading6">
+<h2 id="Heading6">Slide 1</h2>
+</div>
+</div>
+</div>
+<div class="item frame-2">
+<div class="innerframe">
+<div id="wb_Heading5">
+<h2 id="Heading5">Slide 2</h2>
+</div>
+</div>
+</div>
+<div class="item frame-3">
+<div class="innerframe">
+<div id="wb_Heading4">
+<h2 id="Heading4">Slide 3</h2>
+</div>
+</div>
+</div>
+<div class="item frame-4">
+<div class="innerframe">
+<div id="wb_Heading3">
+<h2 id="Heading3">Slide 4</h2>
+</div>
+</div>
+</div>
+</div>
+<a class="left carousel-control" href="#Carousel1" role="button" data-slide="prev">
+<span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="sr-only">Previous</span>
+</a>
+<a class="right carousel-control" href="#Carousel1" role="button" data-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span><span class="sr-only">Next</span>
+</a>
+</div>
+</div>
+
+</div>
+</div>
+<div id="FlexGrid3">
+<div id="FlexGrid3-grid">
+<div class="footer1">
 <div id="wb_Text7">
-<span style="color:#000000;font-family:Verdana;font-size:11px;">This website is created with WYSIWYG Web Builder from <a href="http://www.pablosoftwaresolutions.com" target="_blank">http://www.pablosoftwaresolutions.com</a></span></div>
+<span style="color:#000000;"><strong>Information</strong></span>
+</div>
+<div id="wb_CssMenu3">
+<ul role="menubar">
+<li class="firstmain"><a role="menuitem" href="#" target="_self">About&nbsp;Us</a>
+</li>
+<li><a role="menuitem" href="#" target="_self">Customer&nbsp;Service</a>
+</li>
+<li><a role="menuitem" href="#" target="_self">Privacy&nbsp;Policy</a>
+</li>
+<li><a role="menuitem" href="#" target="_self">Sitemap</a>
+</li>
+</ul>
+
+</div>
+</div>
+<div class="footer2">
 <div id="wb_Text8">
-<span style="color:#000000;font-family:Arial;font-size:13px;">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus pharetra adipiscing pede. Sed a nunc ac velit vestibulum auctor. </span></div>
+<span style="color:#000000;"><strong>My Account</strong></span>
+</div>
+<div id="wb_CssMenu4">
+<ul role="menubar">
+<li class="firstmain"><a role="menuitem" href="#" target="_self">Sign&nbsp;In</a>
+</li>
+<li><a role="menuitem" href="#" target="_self">Register</a>
+</li>
+<li><a role="menuitem" href="#" target="_self">Contact</a>
+</li>
+<li><a role="menuitem" href="#" target="_self">Help</a>
+</li>
+</ul>
+
+</div>
+</div>
+<div class="footer3">
 <div id="wb_Text9">
-<span style="color:#000000;font-family:Arial;font-size:12px;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer convallis. Nullam sollicitudin, ante nec pulvinar imperdiet, magna mi interdum dui, in consectetuer tortor nunc eu tellus. Donec eget risus... <u>Read more<br></u></span></div>
+<span style="color:#000000;"><strong>News Letter</strong></span>
+</div>
 <div id="wb_Text10">
-<span style="color:#000000;font-family:Arial;font-size:12px;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer convallis. Nullam sollicitudin, ante nec pulvinar imperdiet, magna mi interdum dui, in consectetuer tortor nunc eu tellus. Donec eget risus... <u>Read more<br></u></span></div>
-<div id="wb_Text11">
-<span style="color:#000000;font-family:Arial;font-size:12px;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer convallis. Nullam sollicitudin, ante nec pulvinar imperdiet, magna mi interdum dui, in consectetuer tortor nunc eu tellus. Donec eget risus... <u>Read more<br></u></span></div>
-<img src="images/img0005.jpg" id="Banner4" alt="N E W S  L E T T E R">
-<div id="Banner5"><span>INSERT YOUR HEADLINE TEXT HERE</span></div>
+<span style="color:#959595;">Sign up for exclusive offers</span>
+</div>
+<input type="text" id="Editbox2" name="Editbox1" value="" spellcheck="false" placeholder="Enter your email address">
+<input type="submit" id="Button2" name="" value="Subscribe!">
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="wb_Breadcrumb2">
+<ul id="Breadcrumb2">
+<li><a href="">Terms &amp; Conditions</a></li>
+<li><a href="">Privacy Policy</a></li>
+<li><a href="">Contact</a></li>
+</ul>
+
+</div>
+<div id="wb_Text3">
+<span style="color:#4F4F4F;">Copyright © https://www.wysiwygwebbuilder.com 2018 </span>
+</div>
 </div>
 </body>
 </html>
